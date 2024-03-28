@@ -1,3 +1,5 @@
+package EjerciciosPSeInt;
+
 import java.util.Scanner;
 
 public class Calculadora_de_suma_y_Promedio {

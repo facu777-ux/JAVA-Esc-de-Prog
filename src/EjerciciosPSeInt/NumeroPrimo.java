@@ -1,3 +1,5 @@
+package EjerciciosPSeInt;
+
 import java.util.Scanner;
 
 public class NumeroPrimo {
