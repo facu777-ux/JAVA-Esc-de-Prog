@@ -15,6 +15,7 @@ public class Cuenta_Bancaria {
 
         //ATRIBUTOS DE LA CLASE
         private String numeroCuenta;
+
         private double saldo;
 
         public double getSaldo(){return saldo;}
@@ -39,6 +40,19 @@ public class Cuenta_Bancaria {
                 System.out.println("Saldo insuficiente para realizar el retiro");
             }
 
+        }
+
+        //Transferencias entre cuentas:
+        public void Transferir (double cantidad, CuentaBancaria destino){
+
+                //Condición por si se excede el monto de retiro respecto del sueldo disponible.
+                if (saldo >= cantidad){
+                    saldo -= cantidad;
+                    destino.depositar(cantidad);
+                    System.out.println("Transferencia de" + cantidad + "a la cuenta: " + destino.getClass().getSimpleName() + " desde la cuenta: " + numeroCuenta);
+                }else{
+                    System.out.println("Saldo insuficiente para realizar la transferencia");
+                }
         }
 
         public double consultarSaldo(){
